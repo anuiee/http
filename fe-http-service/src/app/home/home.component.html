@@ -1,0 +1,14 @@
+<p>home works!</p>
+
+<form #userForm="ngForm" (ngSubmit)="getUserData(userForm.value)">
+    <input type="text" placeholder="User Id" name="userid" ngModel>
+    <br><br>
+    <input type="text" placeholder="Title" name="title" ngModel>
+    <br><br>
+    <textarea type="text" placeholder="Body" name="body" ngModel ></textarea>
+    <br><br>
+    <button>Add Post</button>
+  
+  </form>
+  <div style="background-color: rgb(89, 179, 215);width: 300px;"><h5>Status/Response:</h5><h4>{{currentStatus}}</h4></div>
+  

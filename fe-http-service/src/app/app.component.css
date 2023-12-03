@@ -1,0 +1,11 @@
+h1 {
+  color: rgb(0, 140, 255);
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=app.component.css.map */
