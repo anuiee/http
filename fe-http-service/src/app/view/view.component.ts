@@ -28,6 +28,7 @@ public jsonDatabyId :any;
     })
   }
 
+
   getDataById(data2: any){
     this.jsonplaceholder.viewUserbyId(data2).subscribe((result)=>{
       // console.log('id',result);
@@ -37,10 +38,17 @@ public jsonDatabyId :any;
      
     })
   }
-  // change():void{
-  //   this.dataValue =!this.dataValue;
-  //   console.log(this.dataValue);
+  delete(index:number){
+    this.jsonplaceholder.deletePost(index).subscribe((res: any)=>{
+      // console.log('id',result);
+      console.log(res);
+      this.jsonData.splice(index,1)
+      // this.res.splice(index,1);
+      
+     
+    });
     
-  // }
+  }
+  
 
 }

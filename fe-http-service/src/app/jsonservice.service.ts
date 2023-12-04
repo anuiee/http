@@ -30,4 +30,28 @@ export class JsonserviceService {
     
     return this.http.get<any>(this.url+data2);
  }
+ updatePost(){
+  console.log();
+  const putBody = {
+    title: 'foo',
+    body: 'bar',
+    userId: 1
+    
+  };
+  return this.http.put('https://jsonplaceholder.typicode.com/posts/1',putBody);
+}
+patchData(){
+  console.log();
+  const putBody = {
+    title: 'HEY THERE',
+  };
+  return this.http.patch('https://jsonplaceholder.typicode.com/posts/1',putBody);
+}
+deletePost(id : number): Observable<number>{
+  console.log('deleted',id);
+  //  this.http.delete<any>(this.url + id).splice(id,1);
+   return this.http.delete<any>(this.url + id);
+   
+}
+
 }

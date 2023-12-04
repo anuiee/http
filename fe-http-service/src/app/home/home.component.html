@@ -8,7 +8,8 @@
     <textarea type="text" placeholder="Body" name="body" ngModel ></textarea>
     <br><br>
     <button>Add Post</button>
-  
+    
   </form>
   <div style="background-color: rgb(89, 179, 215);width: 300px;"><h5>Status/Response:</h5><h4>{{currentStatus}}</h4></div>
-  
+  <button (click)="updatePost()">Update</button>
+  <button (click)="patchPost()">Patch</button>

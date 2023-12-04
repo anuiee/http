@@ -8,7 +8,7 @@
     <pre>{{jsonDatabyId | json}}</pre>
   
 <!-- view full details -->
-<button (click)="getDataFromAPI()">View All</button>
+<button (click)="getDataFromAPI()">View All Post</button>
 <table class="table table-striped"> 
     <thead>
      <tr>
@@ -17,14 +17,17 @@
        <th scope="col">TITLE</th>
        <th scope="col">BODY</th>
        
+       
      </tr>
    </thead>
    <tbody>
-       <tr *ngFor="let item of jsonData">
+       <tr *ngFor="let item of jsonData ; index as i">
          <th scope="row">{{ item.id }}</th>
          <td>{{ item.userId }}</td>
          <td >{{ item.title }}</td>
          <td>{{ item.body }}</td>
+         <td><button (click)="delete(i)">Delete</button></td>
+         <td></td>
        </tr>
          
    </tbody>

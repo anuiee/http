@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -14,11 +14,27 @@ import { JsonserviceService } from '../jsonservice.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  
   data :Array<any>
   public currentStatus!: string;
   constructor(private jsonplaceholder:JsonserviceService){
     this.data=new Array<any>()
+  }
+  ngOnInit():void{
+    this.jsonplaceholder.updatePost();
+  }
+  updatePost(){
+    this.jsonplaceholder.updatePost().subscribe(putdata =>{
+      console.log('Update',putdata);
+      
+    })
+  }
+  patchPost(){
+    this.jsonplaceholder.patchData().subscribe(putdata =>{
+      console.log('Patch',putdata);
+      
+    })
   }
   getDataFromAPI(){
     this.jsonplaceholder.getData().subscribe((data)=>{
